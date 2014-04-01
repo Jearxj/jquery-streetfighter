@@ -1,9 +1,12 @@
 $(document).ready(function() {
+    var is_mouse_in = false;
     $('.ryu').mouseenter(function() {
+        is_mouse_in = true;
         $('.ryu-still').hide();
         $('.ryu-ready').show();
     })
     .mouseleave(function() {
+        is_mouse_in = false;
         $('.ryu-still').show();
         $('.ryu-ready').hide();
     })
@@ -23,40 +26,38 @@ $(document).ready(function() {
     })
     .mouseup(function() {
         $('.ryu-throwing').hide();
-        $('.ryu-ready').show();
+        if (is_mouse_in === true) {
+            $('.ryu-ready').show();
+        } else {
+            $('.ryu-still').show();
+        }   
     })
     
-    $('body').keydown(function (event) {
+    $('body').on('keydown', function (event) {
+    console.log('this is kind of working');
         if (event.which == 88) {
             $('.ryu-cool').show();
             $('.ryu-ready').hide();
             $('.ryu-still').hide();
-            }
+        } 
     })
-        $(this).keyup(function() {
-            $('.ryu').mouseenter(function() {
-                $('.ryu-cool').hide();
+    .on('keyup', function (event) {
+        console.log('yes, kind of');
+        if (event.which == 88) {
+            $('.ryu-cool').hide();
+            if (is_mouse_in === true) {
                 $('.ryu-still').hide();
                 $('.ryu-ready').show();
-            }),
-            $('.ryu').mouseleave(function() {
-                $('.ryu-cool').hide();
-                $('.ryu-ready').hide();
+            }
+            else {
                 $('.ryu-still').show();
-            })
-        });      
-    //.keyup(function (mouseenter) {
-            //$('.ryu-cool').hide();
-           // $('.ryu-ready').show();
-    //})
-    //.keyup(function (mouseleave) {
-            //$('.ryu-cool').hide();
-           // $('.ryu-still').show();
-    //});
+                $('.ryu-ready').hide();
+            }
+        }
+    })
 });
-
 function playHadouken () {
     $('#hadouken-sound')[0].volume = 0.5;
     $('#hadouken-sound')[0].load();
-    $('#hadouken-sound')[0].play;
+    $('#hadouken-sound')[0].play();
 }
