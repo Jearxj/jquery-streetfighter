@@ -3,12 +3,53 @@ body {
     background-color: black;
 }
 
+hr {
+    width: 200px;
+}
+
+#thinkful {
+    font-family: 'Amarante', cursive;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    padding-top: 15px;
+}
+
+#title {
+    font-family: 'Ceviche One', cursive;
+    text-shadow: 5px 20px 15px #B20000;
+    font-size: 120px;
+    text-align: center;
+    color: #FF0000;
+}
+
+#name {
+    font-family: 'Amarante', cursive;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+.instructions {
+    position: absolute;
+    display: block;
+    top: 240px;
+    left: 800px;
+    width: 300px;
+}
+
+.instructions p {
+    font-family: 'Ceviche One', cursive;
+    font-size: 28px;
+    color: black;
+}
+
 .main {
     background-color: white;
-    margin-top: 110px;
+    margin-top: 40px;
     padding-left: 100px;
     min-width: 1200px;
-    height: 500px;
+    height: 400px;
 }
 
 .ryu {
