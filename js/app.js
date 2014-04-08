@@ -34,7 +34,6 @@ $(document).ready(function() {
     })
     
     $('body').on('keydown', function (event) {
-    console.log('this is kind of working');
         if (event.which == 88) {
             $('.ryu-cool').show();
             $('.ryu-ready').hide();
@@ -42,7 +41,6 @@ $(document).ready(function() {
         } 
     })
     .on('keyup', function (event) {
-        console.log('yes, kind of');
         if (event.which == 88) {
             $('.ryu-cool').hide();
             if (is_mouse_in === true) {
